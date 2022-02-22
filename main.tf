@@ -26,7 +26,7 @@ resource "azurerm_resource_group" "iotStorage"{
 }
 
 
-resource "azurerm_storage_account" "storagewas" {
+resource "azurerm_storage_account" "storagewasss" {
   name                     = "storagewas"
   resource_group_name      = azurerm_resource_group.iotStorage.name
   location                 = azurerm_resource_group.iotStorage.location
