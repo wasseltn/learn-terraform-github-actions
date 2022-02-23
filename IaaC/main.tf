@@ -35,8 +35,8 @@ resource "azurerm_storage_account" "storagewass" {
 }
 
 # Here we are creating a container in the storage account
-resource "azurerm_storage_container" "edge" {
-  name                  = "edge"
-  storage_account_name  = azurerm_storage_account.storagewas.name
+resource "azurerm_storage_container" "edgee" {
+  name                  = "edgee"
+  storage_account_name  = azurerm_storage_account.storagewass.name
   container_access_type = "private"
 }
