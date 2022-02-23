@@ -22,16 +22,16 @@ func TestTerraformAzureResourceGroupExample(t *testing.T) {
 
 	terraform.InitAndApply(t, terraformOptions)
 	//get the values of output variables
-	resourceGroupName := terraform.Output(t, terraformOptions, "resource_group_name")
+	resourceGroupName := "iotStorage"
 	// Verify the resource group exists
 	exists := azure.ResourceGroupExists(t, resourceGroupName, subscriptionID)
 	assert.True(t, exists, "Resource group does not exist")
-	storageAccountName := terraform.Output(t, terraformOptions, "storage_account_name")
+	storageAccountName := "storagewasss"
 	// Verify the rstorage account exists
 	exists1 := azure.StorageAccountExists(t, storageAccountName, resourceGroupName, subscriptionID)
 	assert.True(t, exists1, "storage account  does not exist")
 
-	StorageBlobContainerName := terraform.Output(t, terraformOptions, "storage_container_name")
+	StorageBlobContainerName := "edgeee"
 	// Verify the blob container exists
 	exists2 := azure.StorageBlobContainerExists(t, StorageBlobContainerName, storageAccountName, resourceGroupName, subscriptionID)
 	assert.True(t, exists2, "storage account  does not exist")
