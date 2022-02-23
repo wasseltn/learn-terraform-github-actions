@@ -25,8 +25,8 @@ resource "azurerm_resource_group" "iotStorage"{
 }
 
 
-resource "azurerm_storage_account" "storagewas" {
-  name                     = "storagewas"
+resource "azurerm_storage_account" "storagewass" {
+  name                     = "storagewass"
   resource_group_name      = azurerm_resource_group.iotStorage.name
   location                 = azurerm_resource_group.iotStorage.location
   account_tier             = "Standard"
