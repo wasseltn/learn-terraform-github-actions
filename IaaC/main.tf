@@ -25,8 +25,8 @@ resource "azurerm_resource_group" "iotStorage"{
 }
 
 
-resource "azurerm_storage_account" "storagewass" {
-  name                     = "storagewass"
+resource "azurerm_storage_account" "storagewasss" {
+  name                     = "storagewasss"
   resource_group_name      = azurerm_resource_group.iotStorage.name
   location                 = azurerm_resource_group.iotStorage.location
   account_tier             = "Standard"
@@ -35,8 +35,8 @@ resource "azurerm_storage_account" "storagewass" {
 }
 
 # Here we are creating a container in the storage account
-resource "azurerm_storage_container" "edgee" {
-  name                  = "edgee"
-  storage_account_name  = azurerm_storage_account.storagewass.name
+resource "azurerm_storage_container" "edgeee" {
+  name                  = "edgeee"
+  storage_account_name  = azurerm_storage_account.storagewasss.name
   container_access_type = "private"
 }
