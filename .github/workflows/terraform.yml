@@ -7,6 +7,31 @@ on:
   pull_request:
 
 jobs:
+  go-tests:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v1
+        with:
+          go-version: 1.14
+      - uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.0.1
+      - name: Download Go Modules
+        working-directory: test
+        run: go mod download
+      - name: Set ssh keys for github remote download
+        working-directory: test
+        run: |
+          mkdir ~/.ssh
+          echo "${{ secrets.SSH_GITHUB }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+      - name: Run Go Tests
+        working-directory: test
+        run: |
+          go test -v
+
   terraform:
     name: "Terraform"
     env:

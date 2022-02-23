@@ -40,8 +40,3 @@ resource "azurerm_storage_container" "edge" {
   storage_account_name  = azurerm_storage_account.storagewas.name
   container_access_type = "private"
 }
-
-~                                                                                                                                                                                                           
-~                                                                                                                                                                                                           
-~                                                                                                                                                                                                           
-~                               
