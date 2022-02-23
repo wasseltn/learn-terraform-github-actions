@@ -21,12 +21,6 @@ jobs:
       - name: Download Go Modules
         working-directory: test
         run: go mod download
-      - name: Set ssh keys for github remote download
-        working-directory: test
-        run: |
-          mkdir ~/.ssh
-          echo "${{ secrets.SSH_GITHUB }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
       - name: Run Go Tests
         working-directory: test
         run: |
