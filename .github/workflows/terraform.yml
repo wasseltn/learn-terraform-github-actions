@@ -19,10 +19,10 @@ jobs:
         with:
           terraform_version: 1.0.1
       - name: Download Go Modules
-        working-directory: IaaC/test
+        working-directory: ../../IaaC/test
         run: go mod download
       - name: Run Go Tests
-        working-directory: IaaC/test
+        working-directory: ../../IaaC/test
         run: |
           go test -v
 
