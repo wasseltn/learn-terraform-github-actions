@@ -10,8 +10,6 @@ jobs:
   go-tests:
     name: Unit Tests
     runs-on: ubuntu-latest
-    env:
-        working-directory: ./IaaC/test
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-go@v1
