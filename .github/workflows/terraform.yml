@@ -10,6 +10,8 @@ jobs:
   go-tests:
     name: Unit Tests
     runs-on: ubuntu-latest
+    env:
+        working-directory: ./IaaC/test
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-go@v1
@@ -19,10 +21,10 @@ jobs:
         with:
           terraform_version: 1.0.1
       - name: Download Go Modules
-        working-directory: ../../IaaC/test
+        working-directory: ./IaaC/test
         run: go mod download
       - name: Run Go Tests
-        working-directory: ../../IaaC/test
+        working-directory: ./IaaC/test
         run: |
           go test -v
 
